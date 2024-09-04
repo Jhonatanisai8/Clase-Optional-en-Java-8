@@ -4,7 +4,7 @@
  */
 package org.jhonatan.optional.ejemplo.models.repositorio;
 
-import org.jhonatan.optional.ejemplo.models.Computador;
+import java.util.Optional;
 import org.jhonatan.optional.ejemplo.models.Computador;
 
 /**
@@ -13,5 +13,5 @@ import org.jhonatan.optional.ejemplo.models.Computador;
  */
 public interface Repositorio<T> {
 
-    Computador filtrar(String nombre);
+    Optional<Computador> filtrar(String nombre);
 }
