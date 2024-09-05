@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.jhonatan.optional.ejemplo.models.Computador;
+import org.jhonatan.optional.ejemplo.models.Fabricante;
+import org.jhonatan.optional.ejemplo.models.Procesador;
 
 public class ComputadorRespositorio
         implements Repositorio<Computador> {
@@ -12,7 +14,10 @@ public class ComputadorRespositorio
 
     public ComputadorRespositorio() {
         dataSource = new ArrayList<>();
-        dataSource.add(new Computador("Asus ROG", "Strix G512"));
+        Procesador procesador = new Procesador("Ryzen 9", new Fabricante("AMD"));
+        Computador asus = new Computador("Asus ROG", "Strix G512");
+        asus.setProcesador(procesador);
+        dataSource.add(asus);
         dataSource.add(new Computador("MacBook", "MNK2CI"));
     }
 
